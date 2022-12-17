@@ -23,11 +23,12 @@ export default function Services() {
             return (
               <div key={s.id}>
                 <h2>{s.name}</h2>
-                <h2>{s.price}</h2>
+                <h2>{s.price}euro € </h2>
+                <h2>{s.duration} minutes ⏳</h2>
               </div>
             );
           })}
-      <Link to={`#`}>
+      <Link to={`/makeappointment`}>
         <button>BOOK NOW</button>
       </Link>
     </div>
