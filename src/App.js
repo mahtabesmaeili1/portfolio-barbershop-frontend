@@ -1,16 +1,15 @@
+import React from "react";
 import "./App.css";
+
+import "./App.css";
+
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUserWithStoredToken } from "./store/user/thunks";
 import { Routes, Route } from "react-router-dom";
 import { Navigation, MessageBox } from "./components";
-import {
-  Homepage,
-  Login,
-  SignUp,
-  Appointments,
-  MakeAppointment,
-} from "./pages";
+import { Homepage, Login, SignUp, Appointments } from "./pages";
+import { MakeAppointment } from "./pages/MakeAppointment";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,8 +20,7 @@ function App() {
 
   return (
     <div>
-      <Navigation />
-      <MessageBox />
+      <MessageBox /> <Navigation />
       <Routes>
         <Route path="/appointment" element={<Appointments />} />
         <Route path="/" element={<Homepage />} />

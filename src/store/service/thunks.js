@@ -1,5 +1,5 @@
 import axios from "axios";
-import { services, appointments, makeAppointment } from "./slice";
+import { services, appointments, makeAppointment, cancell } from "./slice";
 import { appDoneLoading, appLoading } from "../appState/slice";
 
 import { showMessageWithTimeout } from "../appState/thunks";
@@ -90,6 +90,7 @@ export const makeAnAppointment = (date, time, serviceId) => {
   return async (dispatch, getState) => {
     const { token } = getState().user;
     dispatch(appLoading());
+
     try {
       const response = await axios.post(
         `${apiUrl}/shop/makeappointment`,
@@ -110,6 +111,30 @@ export const makeAnAppointment = (date, time, serviceId) => {
       dispatch(appDoneLoading());
     } catch (e) {
       console.log(e.message);
+    }
+  };
+};
+
+//thunk to cancell an appointment as it owner
+
+export const deleteAppointment = (id) => {
+  return async (dispatch, getState) => {
+    dispatch(appLoading());
+    const { token } = getState().user;
+
+    try {
+      const response = await axios.delete(`${apiUrl}/shop/cancelation/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log("appointment deleted?", response.data);
+
+      dispatch(cancell(id));
+
+      dispatch(appDoneLoading());
+    } catch (e) {
+      console.error(e.message);
     }
   };
 };

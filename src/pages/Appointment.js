@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -7,7 +6,7 @@ import {
   togglePayment,
   toggleFinish,
 } from "../store/service/thunks";
-
+import { deleteAppointment } from "../store/service/thunks";
 import { selectAppointments } from "../store/service/selectors";
 
 export const Appointments = () => {
@@ -20,7 +19,10 @@ export const Appointments = () => {
   useEffect(() => {
     console.log(appointment);
   }, [appointment]);
-
+  const onDelete = (id) => {
+    // console.log("deleting art!", id);
+    dispatch(deleteAppointment(id));
+  };
   const togglePay = (id, paid) => {
     dispatch(togglePayment(!paid, id));
   };
@@ -43,6 +45,13 @@ export const Appointments = () => {
                 <p> service : {a.service.name}</p>
                 <p> price : {a.service.price}</p>
                 <p> duration : {a.service.duration}</p>
+                <button
+                  onClick={() => {
+                    onDelete(a.id);
+                  }}
+                >
+                  cancell
+                </button>
                 <button
                   onClick={() => {
                     toggleDone(a.id, a.done);

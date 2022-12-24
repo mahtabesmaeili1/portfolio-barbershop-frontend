@@ -16,10 +16,17 @@ export const serviceSlice = createSlice({
     makeAppointment: (state, action) => {
       state.appointment = [...state.appointment, action.payload];
     },
+    cancell: (state, action) => {
+      const appointmentId = action.payload;
+      state.appointment = state.appointment.filter(
+        (a) => a.id !== appointmentId
+      );
+    },
   },
 });
 export const {
   services,
+  cancell,
   appointments,
   toggleDone,
   makeAppointment,

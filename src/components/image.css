@@ -1,0 +1,38 @@
+.imageBox {
+  margin-top: 30px;
+}
+.box-tasvir {
+  display: flex;
+
+  overflow: hidden;
+  height: 400px;
+  width: 70%;
+  position: relative;
+  margin: 0 auto;
+}
+@keyframes masihscroll {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateY(-0%);
+  }
+}
+.box-tasvir img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  transition: all 3s;
+  animation-duration: 25s;
+  animation-name: masihscroll;
+  animation-iteration-count: 1000;
+}
+
+.box-tasvir img {
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  border-style: groove;
+}

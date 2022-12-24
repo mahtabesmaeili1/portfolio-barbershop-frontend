@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Button, Input, Title, LinkWord } from "../styled";
-import { Link } from "react-router-dom";
+import { Button, Input, Title } from "../styled";
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

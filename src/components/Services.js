@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllServices } from "../store/service/thunks";
-
+import "./service.css";
 import { selectServices } from "../store/service/selectors";
 import { Link } from "react-router-dom";
 
@@ -16,21 +16,46 @@ export default function Services() {
   }, [dispatch]);
 
   return (
-    <div>
-      {!service
-        ? "Loading... "
-        : service.map((s) => {
-            return (
-              <div key={s.id}>
-                <h2>{s.name}</h2>
-                <h2>{s.price}euro € </h2>
-                <h2>{s.duration} minutes ⏳</h2>
-              </div>
-            );
-          })}
-      <Link to={`/makeappointment`}>
-        <button>BOOK NOW</button>
-      </Link>
+    <div className="wholeService" id="service">
+      <h2 className="treatmentHeader"> TREATMENTS</h2>
+      <p className="p">OUR SPECIALTY</p>
+      <div className="teatmentBox">
+        {!service
+          ? "Loading... "
+          : service.map((s) => {
+              return (
+                <div className="teatmentDetails" key={s.id}>
+                  <div>
+                    <h2>{s.name}</h2>
+                    <p>{s.price}€ </p>
+                    <div>
+                      {s.duration} minutes
+                      <div>
+                        <div className="clock">
+                          <div className="cup top">
+                            <div className="sand"></div>
+                          </div>
+                          <div className="cup">
+                            <div className="sand delayed"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+      </div>
+      <div className="aa">
+        <Link to={`/makeappointment`}>
+          <p className="a">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>BOOK NOW
+          </p>
+        </Link>
+      </div>
     </div>
   );
 }
