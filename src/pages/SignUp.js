@@ -7,9 +7,10 @@ import { signUp } from "../store/user/thunks";
 import { selectToken } from "../store/user/selectors";
 
 export const SignUp = () => {
-  const [name, setName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export const SignUp = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    dispatch(signUp(name, email, password));
+    dispatch(signUp(fullName, email, password, phoneNumber));
   };
 
   return (
@@ -33,9 +34,9 @@ export const SignUp = () => {
         <Title>Sign Up</Title>
         <form onSubmit={submitForm}>
           <Input
-            placeholder="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            placeholder="fullName"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
           />
           <Input
             placeholder="email"
@@ -47,6 +48,12 @@ export const SignUp = () => {
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+          <Input
+            type="phoneNumber"
+            placeholder="phone number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <br />
           <Button type="submit">Sign Up</Button>

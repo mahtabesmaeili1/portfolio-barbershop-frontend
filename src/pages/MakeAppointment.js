@@ -4,19 +4,25 @@ import {
   getAllAppointments,
   getAllServices,
   makeAnAppointment,
+  getTakenTimeSlots,
 } from "../store/service/thunks";
 import { selectToken } from "../store/user/selectors";
-import moment from "moment";
-import { selectAppointments } from "../store/service/selectors";
 
+import "./form.css";
 export const MakeAppointment = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [serviceId, setServiceId] = useState("");
-
+  const [takenTimeSlots, setTakenTimeSlots] = useState([]);
   const dispatch = useDispatch();
-  const appointment = useSelector(selectAppointments);
 
+  useEffect(() => {
+    if (date) {
+      getTakenTimeSlots(date).then((timeSlots) => {
+        setTakenTimeSlots(timeSlots);
+      });
+    }
+  }, [date]);
   useEffect(() => {
     dispatch(getAllAppointments());
     dispatch(getAllServices());
@@ -31,59 +37,70 @@ export const MakeAppointment = () => {
     setTime("");
     setServiceId("");
   };
-  const sortedAppointments =
-    appointment &&
-    appointment
-      .filter((f) => f.date >= moment(new Date()).format("YYYY-MM-DD"))
-      .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  console.log("appointment", appointment);
-  console.log("sorted", sortedAppointments);
   const token = useSelector(selectToken);
+  const timeSlots = [];
+  for (let i = 10; i < 19; i++) {
+    timeSlots.push(`${i}:00`);
+    timeSlots.push(`${i}:15`);
+    timeSlots.push(`${i}:30`);
+    timeSlots.push(`${i}:45`);
+  }
   return (
     <div>
-      <p>make appointment:</p>
+      <p className="header">Make appointment:</p>
       {token ? (
         <form onSubmit={submitForm}>
-          <input type={"date"} onChange={(e) => setDate(e.target.value)} />
-          <input type={"time"} onChange={(e) => setTime(e.target.value)} />
+          <label htmlFor="date">Date:</label>
           <input
-            placeholder="serviceId"
-            value={serviceId}
-            type={"option"}
-            onChange={(e) => setServiceId(e.target.value)}
+            type="date"
+            id="date"
+            name="date"
+            value={date}
+            onChange={(event) => setDate(event.target.value)}
+            min={new Date().toISOString().split("T")[0]}
           />
+          <br />
+          <label htmlFor="time">Time:</label>
 
-          <p>1 - Men Haircut </p>
-          <p>2 - Men Beard </p>
-          <p>3 - Men Haircut & Beard</p>
-          <p> 4 - Haircut&HairWash&Styling</p>
-
-          <button
-            onClick={() => {
-              submitForm();
-            }}
-            type="submit"
+          <select
+            id="time"
+            name="time"
+            value={time}
+            onChange={(event) => setTime(event.target.value)}
           >
-            make appointment
-          </button>
+            <option value="">Select a time</option>
+            {timeSlots.map((slot) => (
+              <option
+                key={slot}
+                value={slot}
+                disabled={takenTimeSlots.includes(slot)}
+                className={takenTimeSlots.includes(slot) ? "disabled" : ""}
+              >
+                {slot}
+              </option>
+            ))}
+          </select>
+          <br />
+          <label htmlFor="service">Service:</label>
+          <select
+            id="service"
+            name="service"
+            value={serviceId}
+            onChange={(event) => setServiceId(event.target.value)}
+          >
+            <option value="">Select a service</option>
+            <option value="1">Men Haircut</option>
+            <option value="2">Men Beard</option>
+            <option value="3">Men Haircut & Beard</option>
+            <option value="4">Haircut&HairWash&Styling</option>
+          </select>
+          <br />
+          <button type="submit">Make Appointment</button>
         </form>
       ) : (
         " Please login"
       )}
-      <h3>all appointments</h3>
-      {!sortedAppointments
-        ? "Loading... "
-        : sortedAppointments.map((a) => {
-            return (
-              <div key={a.id}>
-                <p> done: {a.done ? "yes its done" : "not yet"}</p>
-                <p> date: {a.date}</p>
-                <p> time: {a.time}</p>
-                <p> {a.service.duration}</p>
-              </div>
-            );
-          })}
     </div>
   );
 };

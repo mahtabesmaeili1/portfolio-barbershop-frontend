@@ -17,7 +17,8 @@ export const Navigation = () => {
   return (
     <Nav>
       <Logo className="blink_me" href="/">
-        THE MENS ROOM<span> barbershop</span>
+        <span style={{ fontSize: "40px" }}>[</span>THE MENS ROOM
+        <span style={{ fontSize: "40px" }}>]</span>
       </Logo>
       <Hamburger onClick={() => setOpen(!open)}>
         <span />
@@ -25,23 +26,24 @@ export const Navigation = () => {
         <span />
       </Hamburger>
       <Menu open={open}>
-        <MenuLink to="/">Home</MenuLink>
+        <Liink className="hover-underline-animation" to="/">
+          Home
+        </Liink>
 
-        <Liink className="Liink" smooth to="/#service">
+        <Liink className="hover-underline-animation" smooth to="/#service">
           Treatments
         </Liink>
 
-        <MenuLink to="/makeappointment">
-          <span className="light">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>Book Now
-          </span>
-        </MenuLink>
-        <MenuLink to="/empty2">Contact</MenuLink>
+        <Liink className="hover-underline-animation" to="/makeappointment">
+          <span className="light">Book Now</span>
+        </Liink>
+        <Liink className="hover-underline-animation" to="/#contact">
+          Contact
+        </Liink>
         {employee && employee.isEmployee ? (
-          <MenuLink to="/appointment">see the reservations</MenuLink>
+          <Liink className="hover-underline-animation" to="/appointment">
+            see the reservations
+          </Liink>
         ) : (
           ""
         )}
@@ -53,28 +55,14 @@ export const Navigation = () => {
             Logout
           </button>
         ) : (
-          <MenuLink style={{ fontSize: "20px" }} to="/login">
+          <Liink className="hover-underline-animation" to="/login">
             Login
-          </MenuLink>
+          </Liink>
         )}
       </Menu>
     </Nav>
   );
 };
-
-const MenuLink = styled(Link)`
-  padding: 1rem 2rem;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease-in;
-  font-size: 20px;
-
-  &:hover {
-    color: lightpink;
-  }
-`;
 
 const Nav = styled.div`
   padding: 0 2rem;

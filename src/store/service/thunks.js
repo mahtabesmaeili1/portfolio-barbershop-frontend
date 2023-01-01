@@ -138,3 +138,15 @@ export const deleteAppointment = (id) => {
     }
   };
 };
+//get all the taken times
+export const getTakenTimeSlots = async (date) => {
+  try {
+    const response = await axios.get(`${apiUrl}/shop/a`);
+    const appointments = response.data;
+    return appointments
+      .filter((appointment) => appointment.date === date)
+      .map((appointment) => appointment.time);
+  } catch (error) {
+    console.error(error);
+  }
+};

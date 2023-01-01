@@ -6,20 +6,21 @@ export function Image() {
     <div className="imageBox">
       <div className="box-tasvir">
         <img
-          src="https://m.media-amazon.com/images/M/MV5BMTUxMzU2MTk1OF5BMl5BanBnXkFtZTgwNzg4NjAwMzI@._V1_FMjpg_UX1000_.jpg"
-          alt="barber"
+          src="https://imgk.timesnownews.com/50970096_285194758843860_2122282156474364934_n_1556790944__rend_9_16.jpg?tr=w-360"
+          alt="pic"
         />
         <img
-          src="https://los40es00.epimg.net/los40/imagenes/2019/09/04/moda/1567602420_863035_1567604327_noticia_normal.jpg"
-          alt="shop"
-        />
-        <img
-          src="https://i.pinimg.com/736x/56/9d/84/569d84f07e6c5d78385065ac8f06b39a.jpg"
+          src="https://thumbs.dreamstime.com/b/barber-shop-chair-barbershop-armchair-salon-men-black-white-204316972.jpg"
           alt="shopp"
         />
         <img
-          src="https://i.pinimg.com/originals/61/e7/74/61e774ea17721feaa74d689205fc7f27.jpg"
-          alt="barber"
+          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/img-8609-1583925635.jpeg?resize=480:*"
+          alt="shop"
+        />
+
+        <img
+          src="https://i.pinimg.com/736x/be/9a/6e/be9a6e3cd2437a012667c28a701e6f3f.jpg"
+          alt="ax"
         />
       </div>
     </div>

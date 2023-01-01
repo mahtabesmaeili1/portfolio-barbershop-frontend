@@ -1,54 +1,86 @@
 import React from "react";
 import "../App.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "../App.css";
-import { Icon } from "leaflet";
 
-const barber = new Icon({
-  iconUrl:
-    "https://www.pngfind.com/pngs/m/383-3831254_map-icons-by-scott-de-jonge-barber-shop.png",
-  iconSize: [45, 45],
-});
 function Map() {
   return (
-    <div>
-      <a href="https://maps.apple.com/?address=Helmholtzstraat%2055,%201098%20LE%20Amsterdam,%20Netherlands&auid=10203623610306194417&ll=52.350280,4.939050&lsp=9902&q=Men's%20Barbershop&_ext=CjIKBQgEELABCgQIBRADCgQIBhBnCgQIChAACgQIUhABCgQIVRAQCgQIWRADCgUIpAEQARImKfFNictCLEpAMaXxfrkOuhNAOW8jrydpLUpAQceG++sdyRNAUAQ%3D">
-        <img
-          alt={"location pic"}
-          src={"https://freesvg.org/img/location_icon.png"}
-          width="30"
-        />
-      </a>
-      <a href="https://wa.me/0031639040699">
+    <div className="mapSection">
+      <h2 id="contact" style={{ textAlign: "center", paddingTop: "30px" }}>
         {" "}
-        <img
-          alt={"whatsapp icon pic"}
-          src={
-            "https://www.aircobrabant.nl/wp-content/uploads/Whatsapp-icon.png"
-          }
-          width="30"
-        />
-      </a>
-      <MapContainer center={[52.355767, 4.900297]} zoom={14}>
+        WHERE YOU CAN FIND US
+      </h2>
+      <div className="flexBox">
+        <div className="flex1">
+          <p>
+            We are located inside the "Gallery Salon <br />
+            Studios" Sarphatistraat
+            <br />
+            Roetersstraat 41
+            <br />
+            1018 WB
+            <br />
+            Amsterdam, Netherland
+          </p>
+        </div>
+        <div className="flex2">
+          <a
+            style={{ color: "black" }}
+            href="mailto:mahtabesmaeilii13@gmail.com"
+          >
+            mahtabesmaeilii13@gmail.com
+          </a>{" "}
+          <br />
+          <a style={{ color: "black" }} href="tel:+31648391204">
+            +31648391204
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=31639040699">
+            <img
+              style={{ width: "25px", display: "block", paddingBottom: "20px" }}
+              alt={"whatsapp icon pic"}
+              src={
+                "https://www.aircobrabant.nl/wp-content/uploads/Whatsapp-icon.png"
+              }
+            />
+          </a>
+        </div>
+      </div>
+      <MapContainer
+        style={{
+          borderRadius: "10px",
+          height: "30vw",
+          width: "60vw",
+
+          margin: "auto",
+        }}
+        center={[52.355767, 4.900297]}
+        zoom={13}
+      >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <Marker position={[52.355767, 4.900297]} icon={barber}>
+        <Marker position={[52.355767, 4.900297]}>
           <Popup>
-            <img
-              alt={"the mens room"}
-              style={{ width: "150px", borderRadius: "0.5em" }}
-              src={
-                "https://www.barbershops.nl/sites/default/files/cutthroat_001.jpg"
-              }
-            />
-            <p>THE MENSROOM barbershop</p>
-            <p> ⭐⭐⭐⭐⭐ </p>
+            <h3>
+              THE MENSROOM
+              <br />
+              barbershop
+            </h3>
+            <a
+              href="https://www.google.com/maps/dir/52.3998817,4.9263348/The+men%E2%80%99s+Room,+Utrechtsestraat,+Amsterdam/@52.3799452,4.8731692,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x47c609241acb6ad5:0xc94b4d46d6214419!2m2!1d4.8986634!2d52.3628352"
+              style={{ fontSize: "20px" }}
+            >
+              Direction
+            </a>
           </Popup>
         </Marker>
       </MapContainer>
+      <div className="last">
+        <div>
+          © 2022 Mensroom Amsterdam. All Rights Reserved. Built by Mahtab.
+        </div>
+      </div>
     </div>
   );
 }

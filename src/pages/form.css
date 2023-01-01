@@ -1,0 +1,54 @@
+.disabled {
+  color: gray;
+}
+
+form {
+  width: 500px;
+  height: 600px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+input[type="time"],
+input[type="date"],
+select {
+  width: 60%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  width: 60%;
+  height: 40px;
+  background-color: #000000;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #818181;
+}
+
+.disabled {
+  color: gray;
+}
+
+.header {
+  text-align: center;
+  font-size: 40px;
+  font-family: "lorem";
+}

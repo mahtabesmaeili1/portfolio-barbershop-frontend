@@ -1,6 +1,7 @@
 import Services from "../components/Services";
 import { Image } from "../components/Image";
 import "../App.css";
+import { Footer } from "../components/Footer";
 import Map from "../components/Map";
 export const Homepage = () => {
   return (
@@ -8,7 +9,7 @@ export const Homepage = () => {
       <div>
         <header className="showcase , grid">
           <div className="bg-image">
-            <p> The MensRoom AMSTERDAM </p>
+            <p className="title"> THE MEN'S ROOM AMSTERDAM </p>
           </div>
         </header>
       </div>
@@ -30,6 +31,7 @@ export const Homepage = () => {
       </div>
       <Services />
       <Image />
+      <Footer />
       <Map />
     </div>
   );

@@ -8,13 +8,14 @@ import {
 } from "../store/service/thunks";
 import { deleteAppointment } from "../store/service/thunks";
 import { selectAppointments } from "../store/service/selectors";
-
+import { selectUser, selectToken } from "../store/user/selectors";
 export const Appointments = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllAppointments());
   }, [dispatch]);
-
+  const user = useSelector(selectUser);
+  const token = useSelector(selectToken);
   const appointment = useSelector(selectAppointments);
   useEffect(() => {
     console.log(appointment);
@@ -45,6 +46,7 @@ export const Appointments = () => {
                 <p> service : {a.service.name}</p>
                 <p> price : {a.service.price}</p>
                 <p> duration : {a.service.duration}</p>
+
                 <button
                   onClick={() => {
                     onDelete(a.id);
@@ -52,6 +54,7 @@ export const Appointments = () => {
                 >
                   cancell
                 </button>
+
                 <button
                   onClick={() => {
                     toggleDone(a.id, a.done);

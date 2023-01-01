@@ -6,10 +6,8 @@
 }
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 .blink_me {
-  text-shadow: 0 0 1px #fff, 0 0 6px #fff, 0 0 27px #fff,
-    0 0 42px rgb(255, 255, 255), 0 0 82px rgb(255, 255, 255),
-    0 0 92px rgb(255, 255, 255), 0 0 102px rgb(255, 255, 255),
-    0 0 151px rgb(255, 255, 255);
+  letter-spacing: 6px;
+  font-family: Avanta Garde;
 }
 
 .showcase .bg-image {
@@ -30,7 +28,6 @@
   margin-top: 300px;
   color: white;
   animation: blinker 0.5s linear infinite;
-  text-shadow: 0 0 3px #000000, 0 0 5px #000000;
 }
 
 @keyframes blinker {
@@ -52,4 +49,91 @@
   padding-top: 100px;
   line-height: 2rem;
   padding-bottom: 40px;
+}
+
+.title {
+  letter-spacing: 10px;
+}
+
+.mapSection {
+  max-height: max-content;
+
+  line-height: 2em;
+  font-size: 1.2em;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  margin-top: -30px;
+}
+.flexBox {
+  display: flex;
+
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+.flex2 {
+  margin-top: 60px;
+}
+.last {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+  background-color: black;
+
+  font-size: 17px;
+  margin-bottom: -30px;
+  height: 80px;
+  padding-top: 15px;
+  margin-top: 30px;
+  letter-spacing: 3px;
+}
+.disabled {
+  color: gray;
+}
+
+form {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+input[type="time"],
+input[type="date"],
+select {
+  width: 60%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  width: 60%;
+  height: 40px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.disabled {
+  color: gray;
 }
