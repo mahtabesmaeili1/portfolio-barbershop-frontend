@@ -1,0 +1,19 @@
+.eachAppointment {
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+  display: block;
+  max-width: max-content;
+  padding: 30px;
+  text-align: center;
+}
+.spans {
+  font-size: 20px;
+  margin-left: 15px;
+}
+.employeeB {
+}
+.h1 {
+  text-align: center;
+}

@@ -9,6 +9,7 @@ import {
 import { selectToken } from "../store/user/selectors";
 
 import "./form.css";
+
 export const MakeAppointment = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -50,7 +51,7 @@ export const MakeAppointment = () => {
     <div>
       <p className="header">Make appointment:</p>
       {token ? (
-        <form onSubmit={submitForm}>
+        <form onSubmit={submitForm} className="formAppointment">
           <label htmlFor="date">Date:</label>
           <input
             type="date"
@@ -96,10 +97,15 @@ export const MakeAppointment = () => {
             <option value="4">Haircut&HairWash&Styling</option>
           </select>
           <br />
-          <button type="submit">Make Appointment</button>
+          <button type="submit" className="b">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Make Appointment
+          </button>
         </form>
       ) : (
-        " Please login"
+        <div className="pleaseLogin"> Please Login </div>
       )}
     </div>
   );

@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, selectUser } from "../store/user/selectors";
 import { logOut } from "../store/user/slice";
-import { Link } from "react-router-dom";
 import "../App.css";
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
