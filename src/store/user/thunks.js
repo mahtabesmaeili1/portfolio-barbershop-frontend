@@ -54,6 +54,7 @@ export const login = (email, password) => {
         email,
         password,
       });
+      // console.log("response login", response);
 
       dispatch(
         loginSuccess({ token: response.data.token, user: response.data.user })
@@ -101,6 +102,7 @@ export const getUserWithStoredToken = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
 
+      // console.log("response me", response);
       // token is still valid
       dispatch(tokenStillValid({ user: response.data }));
       dispatch(appDoneLoading());

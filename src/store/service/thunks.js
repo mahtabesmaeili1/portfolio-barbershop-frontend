@@ -1,5 +1,5 @@
 import axios from "axios";
-import { services, appointments, makeAppointment, cancell } from "./slice";
+import { services, appointments, cancell } from "./slice";
 import { appDoneLoading, appLoading } from "../appState/slice";
 
 import { showMessageWithTimeout } from "../appState/thunks";
@@ -105,8 +105,9 @@ export const makeAnAppointment = (date, time, serviceId) => {
           },
         }
       );
+      console.log("make appointment repsonse", response);
 
-      dispatch(makeAppointment(response.data));
+      // dispatch(makeAppointment(response.data.newAppointment));
       dispatch(showMessageWithTimeout("success", false, "New appointment!"));
       dispatch(appDoneLoading());
     } catch (e) {
