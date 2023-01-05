@@ -32,30 +32,54 @@ select {
   color: gray;
 }
 
-.header {
+.titles {
+  letter-spacing: 5px;
+  color: white;
+}
+
+.headerA {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px rgb(255, 255, 255), 0 0 82px rgb(255, 255, 255),
+    0 0 92px rgb(255, 255, 255), 0 0 102px rgb(255, 255, 255),
+    0 0 151px rgb(255, 255, 255);
   text-align: center;
-  font-size: 40px;
+  color: #fff;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  color: #fff;
+  font-size: 30px;
   font-family: "lorem";
-  color: rgb(0, 0, 0);
+  letter-spacing: 5px;
 }
 
 .pleaseLogin {
   font-size: 40px;
   text-align: center;
-
+  color: #fff;
+  padding-bottom: 430px;
   text-align: center;
-
-  color: rgb(0, 0, 0);
+  letter-spacing: 5px;
+  padding-top: 100px;
   animation: blinker 0.5s linear infinite;
 }
 
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+.page {
+  background: url("https://wallpaperaccess.com/full/307193.jpg");
+  background-position: center;
+  margin-top: -40px;
+  background-repeat: no-repeat;
+  background-color: #000000;
+  background-size: cover;
+  width: 100%;
+  margin-bottom: 4-0px;
+  height: 100%;
+  z-index: 1;
+  position: "absolute";
 }
+
+/* boook now */
+
 .b {
-  margin-top: 50px;
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -65,15 +89,18 @@ select {
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-
-  background-color: rgb(0, 0, 0);
-
+  margin-top: 40px;
+  background-color: black;
+  border: rgb(255, 255, 255);
   letter-spacing: 4px;
 }
+
 .b:hover {
   background: #ffffff;
   color: rgb(0, 0, 0);
   border-radius: 5px;
+  box-shadow: 0 0 5px #ffffff, 0 0 25px #ffffff, 0 0 50px #ffffff,
+    0 0 100px #ffffff;
 }
 
 .b span {
@@ -86,7 +113,7 @@ select {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #000000);
+  background: linear-gradient(90deg, transparent, #ffffff);
   animation: btn-anim1 1s linear infinite;
 }
 
@@ -105,7 +132,7 @@ select {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #000000);
+  background: linear-gradient(180deg, transparent, #ffffff);
   animation: btn-anim2 1s linear infinite;
   animation-delay: 0.25s;
 }
@@ -125,7 +152,7 @@ select {
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #000000);
+  background: linear-gradient(270deg, transparent, #ffffff);
   animation: btn-anim3 1s linear infinite;
   animation-delay: 0.5s;
 }
@@ -145,7 +172,7 @@ select {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #000000);
+  background: linear-gradient(360deg, transparent, #ffffff);
   animation: btn-anim4 1s linear infinite;
   animation-delay: 0.75s;
 }

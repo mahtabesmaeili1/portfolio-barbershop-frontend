@@ -4,10 +4,10 @@ import {
   getAllAppointments,
   getAllServices,
   makeAnAppointment,
-  getTakenTimeSlots,
 } from "../store/service/thunks";
 import { selectToken } from "../store/user/selectors";
-
+import { selectAppointments } from "../store/service/selectors";
+import { DateTime, Duration } from "luxon";
 import "./form.css";
 
 export const MakeAppointment = () => {
@@ -16,14 +16,33 @@ export const MakeAppointment = () => {
   const [serviceId, setServiceId] = useState("");
   const [takenTimeSlots, setTakenTimeSlots] = useState([]);
   const dispatch = useDispatch();
+  const allAppointments = useSelector(selectAppointments);
 
   useEffect(() => {
-    if (date) {
-      getTakenTimeSlots(date).then((timeSlots) => {
-        setTakenTimeSlots(timeSlots);
-      });
+    if (allAppointments) {
+      console.log(allAppointments);
     }
-  }, [date]);
+  }, [allAppointments]);
+
+  useEffect(() => {
+    if (allAppointments) {
+      const timeSlotsTaken = allAppointments
+        .filter((app) => app.date === date)
+        .map((app) => {
+          const results = [DateTime.fromISO(`${app.date}T${app.time}`)];
+          const amountOfSlots = Math.round(app.service.duration / 15);
+          for (let i = 0; i < amountOfSlots; i++) {
+            const last = results[results.length - 1];
+            results.push(last.plus(Duration.fromObject({ minutes: 15 })));
+          }
+          return results.map((dt) =>
+            dt.toLocaleString(DateTime.TIME_24_SIMPLE)
+          );
+        });
+      setTakenTimeSlots(timeSlotsTaken.flat());
+    }
+  }, [date, allAppointments]);
+
   useEffect(() => {
     dispatch(getAllAppointments());
     dispatch(getAllServices());
@@ -48,11 +67,13 @@ export const MakeAppointment = () => {
     timeSlots.push(`${i}:45`);
   }
   return (
-    <div>
-      <p className="header">Make appointment:</p>
+    <div className="page">
+      <p className="headerA">Make an appointment</p>
       {token ? (
         <form onSubmit={submitForm} className="formAppointment">
-          <label htmlFor="date">Date:</label>
+          <label htmlFor="date" className="titles">
+            Date:
+          </label>
           <input
             type="date"
             id="date"
@@ -61,8 +82,27 @@ export const MakeAppointment = () => {
             onChange={(event) => setDate(event.target.value)}
             min={new Date().toISOString().split("T")[0]}
           />
+
           <br />
-          <label htmlFor="time">Time:</label>
+          <label htmlFor="service" className="titles">
+            Service:
+          </label>
+          <select
+            id="service"
+            name="service"
+            value={serviceId}
+            onChange={(event) => setServiceId(event.target.value)}
+          >
+            <option value="">Select a service</option>
+            <option value="1">Men Haircut</option>
+            <option value="2">Men Beard</option>
+            <option value="3">Men Haircut & Beard</option>
+            <option value="4">Haircut&HairWash&Styling</option>
+          </select>
+          <br />
+          <label htmlFor="time" className="titles">
+            Time:
+          </label>
 
           <select
             id="time"
@@ -81,20 +121,6 @@ export const MakeAppointment = () => {
                 {slot}
               </option>
             ))}
-          </select>
-          <br />
-          <label htmlFor="service">Service:</label>
-          <select
-            id="service"
-            name="service"
-            value={serviceId}
-            onChange={(event) => setServiceId(event.target.value)}
-          >
-            <option value="">Select a service</option>
-            <option value="1">Men Haircut</option>
-            <option value="2">Men Beard</option>
-            <option value="3">Men Haircut & Beard</option>
-            <option value="4">Haircut&HairWash&Styling</option>
           </select>
           <br />
           <button type="submit" className="b">

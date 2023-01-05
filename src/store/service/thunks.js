@@ -33,7 +33,7 @@ export const getAllAppointments = () => async (dispatch, getState) => {
 };
 
 //thunks to toggle paid for employee
-export const togglePayment = (paid, id, token) => {
+export const togglePayment = (paid, id) => {
   return async (dispatch, getState) => {
     const { token } = getState().user;
     try {
@@ -138,16 +138,4 @@ export const deleteAppointment = (id) => {
       console.error(e.message);
     }
   };
-};
-//get all the taken times
-export const getTakenTimeSlots = async (date) => {
-  try {
-    const response = await axios.get(`${apiUrl}/shop/a`);
-    const appointments = response.data;
-    return appointments
-      .filter((appointment) => appointment.date === date)
-      .map((appointment) => appointment.time);
-  } catch (error) {
-    console.error(error);
-  }
 };
