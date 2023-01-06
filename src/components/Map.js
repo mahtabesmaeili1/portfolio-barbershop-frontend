@@ -33,7 +33,7 @@ function Map() {
           <a style={{ color: "black" }} href="tel:+31648391204">
             +31648391204
           </a>
-          <a href="https://api.whatsapp.com/send?phone=31639040699">
+          <a href="https://api.whatsapp.com/send?phone=31648391204">
             <img
               style={{ width: "25px", display: "block", paddingBottom: "20px" }}
               alt={"whatsapp icon pic"}
@@ -49,7 +49,6 @@ function Map() {
           borderRadius: "10px",
           height: "30vw",
           width: "60vw",
-
           margin: "auto",
         }}
         center={[52.355767, 4.900297]}

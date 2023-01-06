@@ -180,3 +180,8 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+* {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  letter-spacing: 3px;
+}

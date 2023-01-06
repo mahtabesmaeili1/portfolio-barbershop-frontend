@@ -141,6 +141,9 @@ export const MakeAppointment = () => {
             <span></span>
             <span></span>Make Appointment
           </button>
+          <p style={{ color: "red", letterSpacing: "2px", fontSize: "16px" }}>
+            fill the form to enable the button!
+          </p>
         </form>
       ) : (
         <div className="pleaseLogin"> Please Login </div>

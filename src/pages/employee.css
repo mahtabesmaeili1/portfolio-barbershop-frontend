@@ -30,3 +30,6 @@ table {
   font-family: "lorem";
   letter-spacing: 5px;
 }
+* {
+  font-family: "Times New Roman", Times, serif;
+}

@@ -16,7 +16,9 @@ label {
   font-weight: bold;
   font-size: 18px;
 }
-
+* {
+  font-family: "Times New Roman", Times, serif;
+}
 input[type="time"],
 input[type="date"],
 select {
