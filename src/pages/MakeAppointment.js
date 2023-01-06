@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   getAllAppointments,
   getAllServices,
@@ -9,13 +10,16 @@ import { selectToken } from "../store/user/selectors";
 import { selectAppointments } from "../store/service/selectors";
 import { DateTime, Duration } from "luxon";
 import "./form.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const MakeAppointment = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [serviceId, setServiceId] = useState("");
   const [takenTimeSlots, setTakenTimeSlots] = useState([]);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const allAppointments = useSelector(selectAppointments);
 
   useEffect(() => {
@@ -49,13 +53,16 @@ export const MakeAppointment = () => {
   }, [dispatch]);
 
   const submitForm = (e) => {
-    if (e && e.preventDefault) {
-      e.preventDefault();
+    e.preventDefault();
+    if (!date || !time || !serviceId) {
+      alert("Please fill out all the fields.");
+      return;
     }
     dispatch(makeAnAppointment(date, time, serviceId));
     setDate("");
     setTime("");
     setServiceId("");
+    navigate("/confirmation");
   };
 
   const token = useSelector(selectToken);
@@ -124,14 +131,16 @@ export const MakeAppointment = () => {
           </select>
           <br />
 
-          <Link to={"/confirmation"}>
-            <button type="submit" className="b">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>Make Appointment
-            </button>
-          </Link>
+          <button
+            disabled={!date || !time || !serviceId}
+            type="submit"
+            className="b"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Make Appointment
+          </button>
         </form>
       ) : (
         <div className="pleaseLogin"> Please Login </div>

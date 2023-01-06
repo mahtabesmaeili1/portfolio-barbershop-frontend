@@ -94,7 +94,7 @@ export const Appointments = () => {
                       <td>
                         <button
                           style={{
-                            color: a.done ? "green" : "red",
+                            color: a.paid ? "green" : "red",
                             backgroundColor: "white",
                             border: "none",
                             borderRadius: "2px",
