@@ -9,7 +9,7 @@ import { selectToken } from "../store/user/selectors";
 import { selectAppointments } from "../store/service/selectors";
 import { DateTime, Duration } from "luxon";
 import "./form.css";
-
+import { Link } from "react-router-dom";
 export const MakeAppointment = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -123,12 +123,15 @@ export const MakeAppointment = () => {
             ))}
           </select>
           <br />
-          <button type="submit" className="b">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>Make Appointment
-          </button>
+
+          <Link to={"/confirmation"}>
+            <button type="submit" className="b">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>Make Appointment
+            </button>
+          </Link>
         </form>
       ) : (
         <div className="pleaseLogin"> Please Login </div>
