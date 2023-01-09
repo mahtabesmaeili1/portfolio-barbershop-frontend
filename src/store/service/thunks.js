@@ -3,7 +3,7 @@ import { services, appointments, cancell } from "./slice";
 import { appDoneLoading, appLoading } from "../appState/slice";
 
 import { showMessageWithTimeout } from "../appState/thunks";
-const apiUrl = "http://localhost:4000";
+import { apiUrl } from "../../config/constants";
 //thunk to get all the services from db
 export const getAllServices = () => async (dispatch, getState) => {
   try {
