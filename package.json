@@ -35,9 +35,11 @@
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "react-slideshow-image": "^4.1.1",
+    "react-stripe-js": "^1.1.2",
     "react-time-picker": "^5.1.0",
     "react-whatsapp": "^0.3.0",
     "smart-webcomponents-react": "^14.4.0",
+    "stripe": "^11.6.0",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },

@@ -5,37 +5,44 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 function Map() {
   return (
     <div className="mapSection">
-      <h2 id="contact" style={{ textAlign: "center", paddingTop: "30px" }}>
-        {" "}
+      <h2
+        id="contact"
+        style={{ textAlign: "center", paddingTop: "30px", fontSize: "30px" }}
+      >
         WHERE YOU CAN FIND US
       </h2>
       <div className="flexBox">
         <div className="flex1">
-          <p>
-            We are located inside the "Gallery Salon <br />
-            Studios" Sarphatistraat
+          <p style={{ fontSize: "27px" }}>
+            We are located inside the <br />
+            "Gallery Salon Studios"
             <br />
             Roetersstraat 41
             <br />
-            1018 WB
+            1028 WK
             <br />
             Amsterdam, Netherland
           </p>
         </div>
         <div className="flex2">
           <a
-            style={{ color: "black" }}
+            style={{ color: "white" }}
             href="mailto:mahtabesmaeilii13@gmail.com"
           >
             mahtabesmaeilii13@gmail.com
           </a>{" "}
           <br />
-          <a style={{ color: "black" }} href="tel:+31648391204">
+          <a style={{ color: "white" }} href="tel:+31648391204">
             +31648391204
           </a>
           <a href="https://api.whatsapp.com/send?phone=31648391204">
             <img
-              style={{ width: "25px", display: "block", paddingBottom: "20px" }}
+              style={{
+                width: "25px",
+                display: "block",
+                paddingTop: "20px",
+                paddingBottom: "20px",
+              }}
               alt={"whatsapp icon pic"}
               src={
                 "https://www.aircobrabant.nl/wp-content/uploads/Whatsapp-icon.png"
@@ -44,17 +51,20 @@ function Map() {
           </a>
         </div>
       </div>
+
       <MapContainer
         style={{
           borderRadius: "10px",
           height: "30vw",
           width: "60vw",
           margin: "auto",
+          backgroundColor: "black",
         }}
         center={[52.355767, 4.900297]}
         zoom={13}
       >
         <TileLayer
+          style={{ color: "white" }}
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
@@ -75,6 +85,7 @@ function Map() {
           </Popup>
         </Marker>
       </MapContainer>
+
       <div className="last">
         <div>
           © 2022 Mensroom Amsterdam. All Rights Reserved. Built by Mahtab.

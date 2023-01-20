@@ -13,8 +13,11 @@ export function Footer() {
         type="video/mp4"
       />
       <div className="text">
-        The men's room,best barbershop in Amsterdam.We are open everyday 10:00
-        till 19:00
+        <p>
+          {" "}
+          The men's room,best barbershop in the Amsterdam. We are open everyday
+          from 10:00 until 19:00
+        </p>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import { selectAppointments } from "../store/service/selectors";
 import { DateTime, Duration } from "luxon";
 import "./form.css";
 import { useNavigate } from "react-router-dom";
+
 export const MakeAppointment = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
