@@ -16,11 +16,7 @@ export const Navigation = () => {
   return (
     <Nav>
       <Logo className="blink_me" href="/">
-        <span className="esm" style={{ fontSize: "40px" }}>
-          [
-        </span>
-        THE MENS ROOM
-        <span style={{ fontSize: "40px" }}>]</span>
+        [ THE MENS ROOM ]
       </Logo>
       <Hamburger onClick={() => setOpen(!open)}>
         <span />
@@ -89,6 +85,9 @@ const Logo = styled.a`
   span {
     font-weight: 300;
     font-size: 1.3rem;
+  }
+  @media (max-width: 780px) {
+    font-size: 14px;
   }
 `;
 
