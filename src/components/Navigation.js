@@ -16,7 +16,10 @@ export const Navigation = () => {
   return (
     <Nav>
       <Logo className="blink_me" href="/">
-        <span style={{ fontSize: "40px" }}>[</span>THE MENS ROOM
+        <span className="esm" style={{ fontSize: "40px" }}>
+          [
+        </span>
+        THE MENS ROOM
         <span style={{ fontSize: "40px" }}>]</span>
       </Logo>
       <Hamburger onClick={() => setOpen(!open)}>

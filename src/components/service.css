@@ -185,3 +185,9 @@
   font-weight: 100;
   letter-spacing: 3px;
 }
+
+@media (max-width: 767px) {
+  .esm {
+    font-size: 14px;
+  }
+}
