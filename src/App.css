@@ -79,14 +79,26 @@
   justify-content: center;
   color: black;
   background-color: white;
-  font-size: 25px;
-  margin-bottom: 30px;
-  height: 20px;
-  padding-top: 15px;
+  font-size: 20px;
+  padding: 10px;
   margin-top: 60px;
-  letter-spacing: 3px;
+  /* white-space: nowrap; */
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  /* margin-bottom: 25px;
+ 
+  padding-top: 15px;
+  letter-spacing: 3px; */
 }
 
 * {
   font-family: "Times New Roman", Times, serif;
+}
+
+@media (max-width: 767px) {
+  .last {
+    font-size: 13px;
+    padding: 0;
+  }
 }
