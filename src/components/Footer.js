@@ -14,7 +14,6 @@ export function Footer() {
       />
       <div className="text">
         <p>
-          {" "}
           The men's room,best barbershop in the Amsterdam. We are open everyday
           from 10:00 until 19:00
         </p>
