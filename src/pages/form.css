@@ -1,7 +1,9 @@
 .disabled {
   color: gray;
 }
-
+* {
+  box-sizing: border-box;
+}
 .formAppointment {
   max-width: 600px;
   /* width: 100%; */
