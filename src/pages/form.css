@@ -70,10 +70,9 @@ select {
   text-align: center;
   color: #fff;
   margin: 0;
-  /* padding-bottom: 430px; */
 
   letter-spacing: 5px;
-  /* padding-top: 100px; */
+  padding-top: 100px;
   animation: blinker 0.5s linear infinite;
 }
 
