@@ -190,6 +190,7 @@ select {
 }
 
 @media (max-width: 768px) {
-  .headerA {
+  .formAppointment {
+    margin: 0 auto;
   }
 }
