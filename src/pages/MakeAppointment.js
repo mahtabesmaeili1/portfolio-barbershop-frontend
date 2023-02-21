@@ -76,7 +76,7 @@ export const MakeAppointment = () => {
   }
   return (
     <div className="page">
-      <p className="headerA" style={{ paddingTop: "200px" }}>
+      <p className="headerA" style={{ paddingTop: "20px" }}>
         Make an appointment
       </p>
       {token ? (
