@@ -76,7 +76,9 @@ export const MakeAppointment = () => {
   }
   return (
     <div className="page">
-      <p className="headerA">Make an appointment</p>
+      <p className="headerA" style={{ paddingTop: "200px" }}>
+        Make an appointment
+      </p>
       {token ? (
         <form onSubmit={submitForm} className="formAppointment">
           <label htmlFor="date" className="titles">
