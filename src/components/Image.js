@@ -8,6 +8,10 @@ export function Image() {
         {" "}
         <img
           src="https://d375139ucebi94.cloudfront.net/region2/gb/54742/biz_photo/a63dbf0681cc4da7af7ea2606618c0-barbershop-hull-biz-photo-b68a3f3c81df4d1db647fd55303f69-booksy.jpeg"
+          alt="pic"
+        />
+        <img
+          src="https://i.pinimg.com/originals/36/5c/66/365c66a7072ca7caf92eba6e59f77a45.jpg"
           alt="shopp"
         />
         <img

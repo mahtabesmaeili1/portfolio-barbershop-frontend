@@ -1,12 +1,13 @@
 .imageBox {
   margin-top: 30px;
+  object-fit: contain;
 }
 .box-tasvir {
   display: flex;
-
   overflow: hidden;
+  object-fit: contain;
   height: 400px;
-  width: 70%;
+  width: 90%;
   position: relative;
   margin: 0 auto;
 }
@@ -25,10 +26,11 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  transition: all 3s;
-  animation-duration: 25s;
+  transition: all 0.5s;
+  animation-duration: 20s;
   animation-name: masihscroll;
   animation-iteration-count: 1000;
+  object-fit: contain;
 }
 
 .box-tasvir img {
