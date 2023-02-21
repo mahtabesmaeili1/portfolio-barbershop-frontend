@@ -47,16 +47,11 @@ select {
   text-align: center;
   color: #fff;
   padding-top: 60px;
-
+  padding-bottom: 20px;
   color: #fff;
   font-size: 30px;
   font-family: "lorem";
   letter-spacing: 5px;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 600px;
 }
 
 .pleaseLogin {
@@ -71,7 +66,6 @@ select {
 }
 
 .page {
-  background-size: cover;
   background: url("https://wallpaperaccess.com/full/307193.jpg");
   background-position: center;
   margin-top: -30px;
@@ -192,26 +186,5 @@ select {
   50%,
   100% {
     bottom: 100%;
-  }
-}
-
-/* @media (max-width: 768px) {
-  .formAppointment {
-    margin: 0 auto;
-    background-attachment: fixed;
-  }
-} */
-@media (max-width: 767px) {
-  /* Reduce the form width to fit the screen */
-  .headerA {
-    width: 100%;
-  }
-}
-
-/* Media query for large screens */
-@media (min-width: 1200px) {
-  /* Increase the form width */
-  .headerA {
-    width: 80%;
   }
 }
