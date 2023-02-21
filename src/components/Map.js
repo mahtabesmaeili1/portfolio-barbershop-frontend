@@ -13,13 +13,12 @@ function Map() {
       </h2>
       <div className="flexBox">
         <div className="flex1">
-          <p style={{ fontSize: "27px" }}>
-            We are located inside the <br />
-            "Gallery Salon Studios"
+          <p style={{ fontSize: "20px" }}>
+            We are located at
             <br />
-            Roetersstraat 41
+            Van Woustraat 62
             <br />
-            1028 WK
+            1073 LN
             <br />
             Amsterdam, Netherland
           </p>

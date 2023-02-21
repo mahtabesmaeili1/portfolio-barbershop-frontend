@@ -59,7 +59,7 @@
 .mapSection {
   max-height: max-content;
 
-  line-height: 2em;
+  line-height: 3em;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   margin-top: -30px;
@@ -71,7 +71,7 @@
 }
 .flex2 {
   margin-top: 35px;
-  font-size: 25px;
+  font-size: 20px;
 }
 .last {
   display: flex;
@@ -100,5 +100,9 @@
   .last {
     font-size: 13px;
     padding: 0;
+  }
+  .mapSection {
+    font-size: 10px;
+    line-height: 4em;
   }
 }
