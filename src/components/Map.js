@@ -25,17 +25,23 @@ function Map() {
         </div>
         <div className="flex2">
           <a
+            className="emailnumber"
             style={{ color: "white" }}
             href="mailto:mahtabesmaeilii13@gmail.com"
           >
             mahtabesmaeilii13@gmail.com
-          </a>{" "}
+          </a>
           <br />
-          <a style={{ color: "white" }} href="tel:+31648391204">
+          <a
+            className="emailnumber"
+            style={{ color: "white" }}
+            href="tel:+31648391204"
+          >
             +31648391204
           </a>
           <a href="https://api.whatsapp.com/send?phone=31648391204">
             <img
+              className="emailnumber"
               style={{
                 width: "25px",
                 display: "block",
