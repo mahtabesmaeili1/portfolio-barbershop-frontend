@@ -29,7 +29,7 @@ function Map() {
             style={{ color: "white" }}
             href="mailto:mahtabesmaeilii13@gmail.com"
           >
-            mahtabesmaeilii13@gmail.com
+            Mahtabesmaeilii13@gmail.com
           </a>
           <br />
           <a

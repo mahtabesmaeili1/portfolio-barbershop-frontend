@@ -20,7 +20,7 @@ export const ConfirmationPage = () => {
   }, [appointment]);
   return (
     <div className="wholeConfirmation">
-      <h1 className="confirmationH">Your Appointment is confirmed</h1>
+      <h1 className="confirmationH">Your Appointment Is Confirmed</h1>
       {/* <p className="paraConfirmation">Show time and service</p> */}
       <p className="paraConfirmation">
         You should receive a confirmation email in the next few secnonds. If
